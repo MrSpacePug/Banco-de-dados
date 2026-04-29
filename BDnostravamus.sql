@@ -52,7 +52,22 @@ foreign key (id_funcionario) references
 tb_funcionario (cd_funcionario),
 id_comanda int not null,
 foreign key (id_comanda) references
-tb_comanda (cd_comanda)
+tb_comanda (cd_comanda),
+id_mesa int not null,
+foreign key (id_mesa) references
+tb_mesa (cd_mesa)
+);
+
+create table tb_item_pedido (
+cd_item_pedido int primary key auto_increment,
+id_pedido int not null,
+foreign key (id_pedido) references
+tb_pedido (cd_pedido),
+id_produto int not null,
+foreign key (id_produto) references
+tb_produto (cd_produto),
+qt_produto int not null,
+vl_pedido decimal(6,2) not null
 );
 
  
